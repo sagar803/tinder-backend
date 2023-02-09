@@ -6,7 +6,6 @@ import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-d
 
 // App config
 dotenv.config();
-console.log(process.env);
 const app = express();
 const port = process.env.PORT || 8001
 const connection_url = "mongodb+srv://"+process.env.DBUSERNAME+":"+process.env.DBPASSWORD+"@cluster0.z9pfyz1.mongodb.net/tinderdb?retryWrites=true&w=majority"
@@ -25,7 +24,7 @@ mongoose.connect(connection_url , {
 
 // API endpoints
 app.get("/", (req, res) => (
-    res.status(200).send("hello"))
+    res.status(200).send("Tinder-clone backend server is up and running"))
 );
 
 app.post('/tinder/cards', (req, res) => {
